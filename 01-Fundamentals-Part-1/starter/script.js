@@ -98,3 +98,8 @@ console.log(y);
 // Comparision operators
 console.log(ageJonas > ageSarah); // > < >= <=
 console.log(ageSarah >= 18);
+
+// Operator Precedence
+let a, b;
+a = b = 25 - 10 - 5; // a = b = 10, a = 10 b = 10
+console.log(a, b);
