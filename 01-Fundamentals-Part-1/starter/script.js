@@ -60,3 +60,41 @@ console.log(typeof year);
 // Both value and data type are undefined
 // Null says a object. But it is undefined. It is a bug in JS which is not fixed because of legacy reasons
 console.log(typeof null);
+
+// 13. Basic Operators
+
+const now = 2023;
+
+// Subtraction
+const ageJonas = now - 1991;
+const ageSarah = now - 2000;
+console.log(ageJonas, ageSarah);
+
+// Division
+console.log(ageJonas / 2);
+
+// Multiplication
+console.log(ageJonas * 2);
+
+// Exponenantial
+console.log(2 ** 3);
+
+// Concatunation
+const lastName = 'Schmedtmann';
+console.log(firstName + ' ' + lastName);
+
+// Assignment Operators
+let x = 10 + 5;
+console.log(x);
+
+let y = 10 + 5; // 15
+y += 10; // y = y + 10 = 25
+y *= 4; // y = y * 4 = 100
+y++; // y = y + 1 = 101
+y--; // y = y - 1 = 100
+y--; // y = y - 1 = 99
+console.log(y);
+
+// Comparision operators
+console.log(ageJonas > ageSarah); // > < >= <=
+console.log(ageSarah >= 18);
