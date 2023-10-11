@@ -99,7 +99,20 @@ console.log(y);
 console.log(ageJonas > ageSarah); // > < >= <=
 console.log(ageSarah >= 18);
 
-// Operator Precedence
+// 14. Operator Precedence
 let a, b;
 a = b = 25 - 10 - 5; // a = b = 10, a = 10 b = 10
 console.log(a, b);
+
+// 17. Strings and Template Literals
+const job = 'teacher';
+const dob = 1991;
+
+const jonas = "I'm " + firstName + ', a ' + (now - dob) + ' years old ' + job + '!';
+
+console.log(jonas);
+
+const jonasNew = `I'm ${firstName}, a ${now - dob} years old ${job}!`
+
+console.log(jonasNew);
+
