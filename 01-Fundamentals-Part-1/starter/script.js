@@ -33,3 +33,30 @@ let $5under = 10;
 // 1. It is not a good practise to start a variable name with an uppercase. Because, we use it in Object Oriented Programming.
 // 2. PI is constant and can be write in all Uppercase.
 let PI = 3.1415;
+
+// 11. Data Types
+
+// 1. Boolean
+console.log(true);
+let javaScript = true;
+console.log(javaScript);
+
+// TypeOf
+console.log(typeof javaScript);
+
+// Dynamic typing
+javaScript = "Test"
+console.log(typeof javaScript);
+
+// Undefined
+// Undefined here is value and value data type
+let year;
+console.log(year);
+console.log(typeof year);
+
+year = 2000;
+console.log(typeof year);
+
+// Both value and data type are undefined
+// Null says a object. But it is undefined. It is a bug in JS which is not fixed because of legacy reasons
+console.log(typeof null);
