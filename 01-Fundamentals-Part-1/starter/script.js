@@ -116,3 +116,12 @@ const jonasNew = `I'm ${firstName}, a ${now - dob} years old ${job}!`
 
 console.log(jonasNew);
 
+// 18. Taking Decisions: if / else Statements
+const age = 15;
+const oldEnough = age >= 18;
+
+if (oldEnough) console.log("Sarah can start driving!");
+else {
+    const yearsLeft = 19 - age;
+    console.log(`Sarah has to wait ${yearsLeft}!`);
+}
