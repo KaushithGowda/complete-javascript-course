@@ -196,7 +196,7 @@ if (favNum === 7) {
     console.log('You must like cristiano');
     console.log('Suii!');
 } else if (favNum === 10) console.log('You might like messi');
-else console.log('I cannot guess whom might guess');
+else console.log('I cannot guess whom might like');
 
 if (favNum !== 7) console.log('How can you not like cristiano?');
 
@@ -241,4 +241,16 @@ switch (day) {
 
     default:
         break;
+}
+
+// 27. Statement and Expressions
+
+// Expression is something which produces a value
+true;
+true && false;
+
+// Statement is something which has set of rules and which does not produce a value
+if (age > 10) {
+    //Statement
+    const age = 50;
 }
