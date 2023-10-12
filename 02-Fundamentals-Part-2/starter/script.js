@@ -30,3 +30,22 @@ function fruitProcessor(apples, oranges) {
 
 const appleJuice = fruitProcessor(4, 5);
 console.log(appleJuice);
+
+// 34. Function Declarations vs Expressions
+
+// Function Declarations
+function calaAge1(age) {
+    return 2023 - age;
+}
+const age1 = calaAge1(1991);
+
+console.log(age1);
+// In function declaration we can call the function first and declare it late. But that does not work in function Expression
+
+//Function Expression
+const calaAge2 = function (age) {
+    return 2023 - age;
+}
+const age2 = calaAge2(1991);
+
+console.log(age2);
