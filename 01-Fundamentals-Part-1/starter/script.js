@@ -189,7 +189,8 @@ const weight = 45;
 if (age === 55) console.log('The chick is fat!');
 else console.log('The chick is fit!');
 
-const favNum = Number(prompt('What your favorite number?'));
+let favNum;
+// favNum = Number(prompt('What your favorite number?'));
 
 if (favNum === 7) {
     console.log('You must like cristiano');
@@ -198,3 +199,15 @@ if (favNum === 7) {
 else console.log('I cannot guess whom might guess');
 
 if (favNum !== 7) console.log('How can you not like cristiano?');
+
+// 23. Boolean logic
+
+const hasDL = true;
+const hasGoodVision = true;
+
+if (hasDL && hasGoodVision) console.log('Sarah can drive!');
+else console.log('Sarah cannot drive!');
+
+const isTired = true;
+
+if (hasDL && hasGoodVision && !isTired) console.log('Sarah cannot drive');
