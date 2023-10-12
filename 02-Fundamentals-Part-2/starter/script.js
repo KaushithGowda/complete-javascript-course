@@ -60,3 +60,21 @@ const sentence = (firstName, job) => {
 };
 
 sentence('Cristiano', 'Footballer');
+
+// 36. Functions calling othere functions
+
+function weekendTraining(firstName) {
+    return `${firstName} trains 3x times than other players on weekends!`
+}
+
+function weekdayTraining(firstName) {
+    return `${firstName} trains 5x times than other players on weekdays!`
+}
+
+function training(firstName) {
+    const weekends = weekendTraining(firstName);
+    const weekdays = weekdayTraining(firstName);
+    console.log(`${weekends} and ${weekdays}`);
+}
+
+training('Virat');
