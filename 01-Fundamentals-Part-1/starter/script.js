@@ -211,3 +211,34 @@ else console.log('Sarah cannot drive!');
 const isTired = true;
 
 if (hasDL && hasGoodVision && !isTired) console.log('Sarah cannot drive');
+
+// 26. The swtich statement
+
+const day = "Saturday";
+
+switch (day) {
+    case "Monday":
+        console.log('Code!');
+        break;
+    case "Tuesday":
+        console.log('Code!');
+        break;
+    case "Wednesday":
+        console.log('Code!');
+        break;
+    case "Thursday":
+        console.log('Code!');
+        break;
+    case "Friday":
+        console.log('Code!');
+        break;
+    case "Saturday":
+        console.log('Party!');
+        break;
+    case "Sunday":
+        console.log('Code!');
+        break;
+
+    default:
+        break;
+}
