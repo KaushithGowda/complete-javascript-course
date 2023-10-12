@@ -49,3 +49,14 @@ const calaAge2 = function (age) {
 const age2 = calaAge2(1991);
 
 console.log(age2);
+
+// 35. Arrow Functions
+
+const res = () => console.log('The arrow function called');
+res();
+
+const sentence = (firstName, job) => {
+    console.log(`${firstName} is a successfull ${job}`);
+};
+
+sentence('Cristiano', 'Footballer');
