@@ -125,3 +125,34 @@ else {
     const yearsLeft = 19 - age;
     console.log(`Sarah has to wait ${yearsLeft}!`);
 }
+
+// 20. Type conversion and coercion
+// Type conversion: Manually us converting the value type to a different value type
+// Type coersion: JS automatically converting the value type.
+
+const inputYear = '1991';
+// Type conversion
+
+// Built-in Number function
+console.log(Number(inputYear), inputYear);
+console.log(Number(inputYear) + 18);
+
+console.log(Number('Jonas')); // NaN // JS gives us NaN whenever a operation on number fails to produce a new number
+console.log(typeof NaN); // number // NaN is a invalid number
+
+// Built-in String function
+console.log(String(23), 23);
+
+// Type coersion
+// This happens whenever two values are of different types
+console.log('Im ' + 23 + ' years old'); // Whenever JS encounters different value types with + or - the type coersion occurs
+
+console.log('23' - '10' - 3); // 10 // String to number when -
+console.log('23' + '10' + 3); // 23103 // Number to string when +
+console.log('23' * '2'); // 46
+console.log('23' / '2'); // 11.5
+
+let n = '1' + 1;
+n = n - 1;
+console.log(n); // 10
+
