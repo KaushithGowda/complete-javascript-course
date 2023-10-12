@@ -156,3 +156,24 @@ let n = '1' + 1;
 n = n - 1;
 console.log(n); // 10
 
+// 21. Truthy and Falsy Values
+
+// Five falsy values: 0, '', undefined, null, NaN // All these values will be converted to false when we try to convert them to boolean(false)
+
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean('Jonas')); // false
+console.log(Boolean('')); // true
+console.log(Boolean({})); // true
+console.log(Boolean(null)); // false
+console.log(Boolean(NaN)); // false
+
+// Truthy and Falsy are most of time are implicit or type coercio. The JS does this in the case of logical operations or in if else conditions
+
+const money = 0;
+if (money) console.log('Dont spend it all!');
+else console.log('Get a job!');
+
+let height;
+if (height) console.log('Yay! height is defined');
+else console.log('Height is undefined');
