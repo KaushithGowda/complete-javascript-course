@@ -177,3 +177,24 @@ else console.log('Get a job!');
 let height;
 if (height) console.log('Yay! height is defined');
 else console.log('Height is undefined');
+
+// 22. Equality Operators: == vs ===
+// == is Loose equality operator (The type coercion occurs)
+const h = '5';
+if (h == 5) console.log('The chick is fine!');
+else console.log('The chick is short!');
+
+// == is Strict equality operator 
+const weight = 45;
+if (age === 55) console.log('The chick is fat!');
+else console.log('The chick is fit!');
+
+const favNum = Number(prompt('What your favorite number?'));
+
+if (favNum === 7) {
+    console.log('You must like cristiano');
+    console.log('Suii!');
+} else if (favNum === 10) console.log('You might like messi');
+else console.log('I cannot guess whom might guess');
+
+if (favNum !== 7) console.log('How can you not like cristiano?');
