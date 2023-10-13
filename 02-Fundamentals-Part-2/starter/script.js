@@ -129,7 +129,21 @@ const obj = {
     firstName: 'Jonas',
     lastName: 'Schmedtmann',
     job: 'Teacher',
-    friends: friends
+    friends: friends,
+    dob: 1997,
+    calc: function () {
+        return 2023 - this.dob;
+    }
 }
 
 console.log(obj);
+
+// 43. Dot vs. Bracket Notation
+
+console.log(obj.firstName);
+console.log(obj['firstName']);
+
+console.log(`${obj.firstName} has ${friends.length} and ${obj.friends[0]} is his best friend!`);
+
+const calculatedAge = obj.calc();
+console.log(calculatedAge);
