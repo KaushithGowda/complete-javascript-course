@@ -96,3 +96,27 @@ function calc(age) {
 
 const response = calc(19);
 console.log(response);
+
+// 40. Basic Array Operations
+
+// JS has built funtions to perform operations on  Array. They are also called Arrays.
+
+// Push adds an item after last index of the array
+const newLength1 = friends.push('mike');
+console.log(newLength1);
+console.log(friends);
+
+// Unshift adds an item before 1st index of the array
+const newLength2 = friends.unshift('sara');
+console.log(newLength2);
+console.log(friends);
+
+// pop removes the item from last index
+const popped1 = friends.pop();
+console.log(popped1);
+console.log(friends);
+
+// shift removes the item from first index
+const popped2 = friends.shift();
+console.log(popped2);
+console.log(friends);
