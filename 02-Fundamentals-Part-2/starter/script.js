@@ -78,3 +78,21 @@ function training(firstName) {
 }
 
 training('Virat');
+
+// 39. Introduction to Arrays
+
+const friend1 = 'John';
+const friend2 = 'Jake';
+const friend3 = 'Matt';
+
+const friends = ['John', 'Jake', 'Matt'];
+console.log(friends);
+
+console.log(friends[0]);
+
+function calc(age) {
+    return 2037 - age;
+}
+
+const response = calc(19);
+console.log(response);
