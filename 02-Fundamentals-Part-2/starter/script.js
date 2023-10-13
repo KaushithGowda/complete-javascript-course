@@ -120,3 +120,16 @@ console.log(friends);
 const popped2 = friends.shift();
 console.log(popped2);
 console.log(friends);
+
+// 42. Introduction to Objects
+
+// There are many ways to write an obj
+// Object literal via of writing an object
+const obj = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    job: 'Teacher',
+    friends: friends
+}
+
+console.log(obj);
