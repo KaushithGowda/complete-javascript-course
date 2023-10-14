@@ -165,7 +165,7 @@ for (let index = 0; index <= 10; index++) {
     console.log(`This is console log-${index}`);
 };
 
-// 46. Looping Arrays, Breaking and Continuning
+// 47. Looping Arrays, Breaking and Continuning
 
 const cr7 = [
     'Cristiano',
@@ -194,3 +194,18 @@ for (let index = 0; index < cr7.length; index++) {
     if (typeof cr7[index] === 'number') break;
     console.log(cr7[index], typeof cr7[index]);
 };
+
+// 48. Looping Backwards and Loops in loops 
+
+for (let index = cr7.length; index >= 0, index--;) {
+    // console.log(index);
+}
+
+const exercise = ['Chest', 'Shoulder', 'Bicep', 'Tricep', 'Leg', 'Back']
+
+for (let i = 0; i < exercise.length; i++) {
+    console.log(exercise[i]);
+    for (let index = 0; index < exercise.length; index++) {
+        console.log(`Rep - ${index}`);
+    }
+}
