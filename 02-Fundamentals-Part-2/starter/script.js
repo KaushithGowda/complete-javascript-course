@@ -209,3 +209,18 @@ for (let i = 0; i < exercise.length; i++) {
         console.log(`Rep - ${index}`);
     }
 }
+
+// 48. The while loop
+
+let i = 0;
+while (i <= 10) {
+    console.log(`${i} iteration`);
+    i++;
+};
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log('The loop is about to end.');
+}
