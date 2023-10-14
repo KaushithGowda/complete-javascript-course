@@ -147,3 +147,20 @@ console.log(`${obj.firstName} has ${friends.length} and ${obj.friends[0]} is his
 
 const calculatedAge = obj.calc();
 console.log(calculatedAge);
+
+// 46. Iteration: The for loop
+
+console.log('This is console log-1');
+console.log('This is console log-2');
+console.log('This is console log-3');
+console.log('This is console log-4');
+console.log('This is console log-5');
+console.log('This is console log-6');
+console.log('This is console log-7');
+console.log('This is console log-8');
+console.log('This is console log-9');
+console.log('This is console log-10');
+
+for (let index = 0; index <= 10; index++) {
+    console.log(`This is console log-${index}`);
+};
