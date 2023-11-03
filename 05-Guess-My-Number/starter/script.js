@@ -26,8 +26,11 @@ document.querySelector('.check').addEventListener('click', () => {
     }
 
     // 74. Implenting the game logic
+    // 75. Manipulating CSS Styles
     if (Number(guess) === secretNumber) {
         document.querySelector('.message').textContent = 'You are goddamn right ✅';
+        document.querySelector('body').style.backgroundColor = '#60b347';
+        document.querySelector('.number').style.width = '30rem';
     } else if (guess > secretNumber) {
         if (score > 1) {
             document.querySelector('.message').textContent = 'Think a smaller number 📉';
