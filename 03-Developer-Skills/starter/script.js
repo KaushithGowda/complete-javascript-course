@@ -49,3 +49,19 @@ function calcAmpTwoArray(sample1, sample2) {
 
 const tempAmpTwoArray = calcAmpTwoArray(sample1, sample2);
 console.log('The temp amplitude:', tempAmpTwoArray);
+
+const thermoArray = [17, 21, 23];
+
+function printForecast(arry) {
+    let finalString = '...';
+    let day = 1;
+    for (let i = 0; i < arry.length; i++) {
+        let string = '';
+        day === 1 ? string = `${arry[i]} in ${day} day...` : string = `${arry[i]} in ${day} days...`
+        finalString = finalString + string;
+        day++;
+    }
+    console.log(finalString);
+}
+
+printForecast(thermoArray);
