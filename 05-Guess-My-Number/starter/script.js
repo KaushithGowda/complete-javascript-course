@@ -17,7 +17,7 @@ function changeNumber() {
 }
 changeNumber();
 
-document.querySelector('.number').textContent = secretNumber;
+// document.querySelector('.number').textContent = secretNumber;
 
 let score = 20;
 
@@ -35,6 +35,8 @@ document.querySelector('.check').addEventListener('click', () => {
         // 75. Manipulating CSS Styles
         document.querySelector('body').style.backgroundColor = '#60b347';
         document.querySelector('.number').style.width = '30rem';
+        document.querySelector('.number').textContent = secretNumber;
+
         // 77. Implementing High scores
         if (score > highScore) {
             document.querySelector('.highscore').textContent = score;
@@ -70,5 +72,5 @@ document.querySelector('.again').addEventListener('click', () => {
     document.querySelector('body').style.backgroundColor = '#222';
     document.querySelector('.number').style.width = '15rem';
     changeNumber();
-    document.querySelector('.number').textContent = secretNumber;
+    document.querySelector('.number').textContent = '?';
 })
