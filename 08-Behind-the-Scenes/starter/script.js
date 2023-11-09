@@ -50,3 +50,47 @@ const c = 2;
 
 // var variable will create a property on the global window object
 console.log(window.a === a);
+
+// 96. The this Leyword
+console.log(this);
+
+// Using this keyword with strict mode (else it would have been global window object)
+const calcFun = function () {
+    console.log(this); // undefined 
+}
+
+calcFun();
+
+// Arrow this keyword
+const calcArrow = () => {
+    console.log(this); // lexical this keyword (Uses surrounding this keyword)
+}
+
+calcArrow();
+
+const jonas = {
+    year: 1980,
+    calcAge: function (birthYear) {
+        console.log('this: ', this);
+        console.log('Inside fun: ', birthYear - this.year);
+    }
+}
+
+// this keyword is pointing to the object calling the function which has the this keyboard
+// jonas.calcAge(2023);
+
+const matt = {
+    year: 1990
+}
+
+console.log('jonas fun: ', jonas.calcAge);
+
+// Borrowing the method from jonas object
+matt.calcAge = jonas.calcAge;
+
+// Now since the object calling the method is matt this keyword will point to matt
+matt.calcAge(2023);
+
+// this keyword is undefined here because there is no owner object for f
+const f = jonas.calcAge;
+f();
