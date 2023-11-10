@@ -51,7 +51,7 @@ const c = 2;
 // var variable will create a property on the global window object
 // console.log(window.a === a);
 
-// 96. The this Leyword
+// 96. The this keyword
 // console.log(this);
 
 // Using this keyword with strict mode (else it would have been global window object)
@@ -95,6 +95,7 @@ matt.calcAge = jonas.calcAge;
 const f = jonas.calcAge;
 // f();
 
+// 98. Regular functions vs Arrow functions
 const joey = {
     firstName: 'joey',
     year: 1980,
@@ -177,6 +178,8 @@ const example = (a, b) => {
 
 example(10, 11, 12);
 
+// 99. Primitives vs Objects(Primitive vs Reference Types)
+
 const me = {
     name: 'jonas',
     age: 19
@@ -186,3 +189,23 @@ friend.age = 21;
 friend.address = 'bengaluru';
 console.log(friend);
 console.log(me);
+
+// 100. Primitives vs Objects in Practise
+
+// Copying objects
+const jessica = {
+    firstName: 'Jessica',
+    lastName: 'Williams',
+    age: 27,
+    family: ['Alice', 'Bob']
+};
+
+// Object.assign(targetObj, FromObj) This can copy the object on first level basis and on second level it the objects point to same ref
+const jessicaCopy = Object.assign({}, jessica);
+jessicaCopy.lastName = 'Smith';
+
+jessicaCopy.family.push('Mary');
+jessicaCopy.family.push('Jake');
+
+console.log('Before Marriage:', jessica);
+console.log('After Marriage:', jessicaCopy);
