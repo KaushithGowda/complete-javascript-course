@@ -176,3 +176,13 @@ const example = (a, b) => {
 }
 
 example(10, 11, 12);
+
+const me = {
+    name: 'jonas',
+    age: 19
+}
+const friend = me;
+friend.age = 21;
+friend.address = 'bengaluru';
+console.log(friend);
+console.log(me);
