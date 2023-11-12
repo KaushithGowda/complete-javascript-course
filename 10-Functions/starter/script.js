@@ -127,3 +127,33 @@ book.apply(indigo, flightData);
 
 // Better Way
 book.call(indigo, ...flightData);
+
+// 134. The bind method 
+
+// This method would return a function
+
+const bookIG = book.bind(indigo);
+const bookKF = book.bind(kingfisher);
+
+bookIG(456, 'Rohit');
+bookKF(18, 'Kohli');
+
+const bookIG77 = book.bind(indigo, 77);
+bookIG77('Gill');
+
+// Event Listensers
+kingfisher.flights = 100;
+kingfisher.buyFlight = function () {
+    // console.log(this); // Points to the selected element
+    console.log(this.flights);
+    this.flights++;
+};
+
+document.querySelector('.buy').addEventListener('click', kingfisher.buyFlight.bind(kingfisher));
+
+// Partial Application
+const tax = (rate, value) => value * rate / 100;
+console.log(tax(15, 1000));
+
+const tax18 = tax.bind(null, 18);
+console.log(tax18(100));
