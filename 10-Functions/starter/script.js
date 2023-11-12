@@ -62,3 +62,17 @@ const newPassport = function (person) {
 
 // newPassport(jonas);
 // checkIn(flight, jonas);
+
+// 131. Functions accepting Callback functions
+
+// First Order function
+const dating = (str1, str2) => {
+    return `${str1} and ${str2} started dating`;
+}
+
+// Higher order function
+const friends = (str1, str2, fn) => {
+    console.log(`${str1} and ${str2} were friends. But later ${dating(str1, str2)}`);
+}
+
+friends('chander', 'monica', dating);
