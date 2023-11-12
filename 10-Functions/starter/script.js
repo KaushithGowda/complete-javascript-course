@@ -76,3 +76,15 @@ const friends = (str1, str2, fn) => {
 }
 
 friends('chander', 'monica', dating);
+
+// 132. Functions Returning Functions
+
+const greet = (greeting) => {
+    return (name) => {
+        console.log(`${greeting} ${name}`);
+    };
+};
+
+// const greet = greeting => name => console.log(`${greeting} ${name}`);
+
+greet('Hello')('Jonas');
