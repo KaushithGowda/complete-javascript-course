@@ -88,3 +88,42 @@ const greet = (greeting) => {
 // const greet = greeting => name => console.log(`${greeting} ${name}`);
 
 greet('Hello')('Jonas');
+
+// 133. The call and apply methods
+
+const kingfisher = {
+    airline: 'The Kingfisher Air Lines',
+    iataCode: 'KF',
+    bookings: [],
+    book(flightNum, name) {
+        console.log(`${name} booked a seat on ${this.airline} flight ${this.iataCode}-${flightNum}`);
+        this.bookings.push({ flight: `${this.iataCode}-${flightNum}`, name });
+    }
+};
+
+kingfisher.book(101, 'KAUSHIK');
+kingfisher.book(102, 'LUCKEY');
+
+// console.log(kingfisher.bookings);
+
+const indigo = {
+    airline: 'The Indigo Airlines',
+    iataCode: 'IN',
+    bookings: [],
+}
+
+const book = kingfisher.book;
+
+// this keyword will be undefined. Since, the way we are calling the function using a simple function call
+// book(123, 'JOHN');
+
+// Call method
+book.call(indigo, 23, 'Mark');
+// console.log(indigo);
+
+const flightData = [45, 'Jake'];
+// Apply method
+book.apply(indigo, flightData);
+
+// Better Way
+book.call(indigo, ...flightData);
