@@ -135,11 +135,32 @@ const rupees = usd.map((dollar, index) => {
 
 console.log(rupees);
 
-// 153. The reduce Method
+// 152. The filter Method
 
 const credits = movements.filter((mov) => mov > 0);
 const debits = movements.filter((mov) => mov < 0);
 
-console.log(movements);
-console.log(credits);
-console.log(debits);
+// console.log(movements);
+// console.log(credits);
+// console.log(debits);
+
+// 153. The reduce Method
+
+// Total USD
+const totalUsd = usd.reduce((acc, crr, arr) => {
+  return acc = acc + crr;
+});
+
+console.log(totalUsd);
+
+// Maximum
+const max = movements.reduce((acc, crr) => {
+  if (acc > crr) return acc;
+  else return crr;
+})
+
+console.log(max);
+
+const maxVal = movements.reduce((acc, crr) => acc > crr ? acc : crr);
+
+console.log(maxVal);
