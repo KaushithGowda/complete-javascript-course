@@ -134,3 +134,12 @@ const rupees = usd.map((dollar, index) => {
 })
 
 console.log(rupees);
+
+// 153. The reduce Method
+
+const credits = movements.filter((mov) => mov > 0);
+const debits = movements.filter((mov) => mov < 0);
+
+console.log(movements);
+console.log(credits);
+console.log(debits);
