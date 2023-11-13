@@ -74,3 +74,33 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+// 142. Simple Array methods
+
+let arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
+
+// slice
+// does not mutate the current array
+console.log('arr.slice(3):', arr.slice(3)); // returns an array
+console.log('arr.slice(3,5):', arr.slice(3, 5)); // returns an array
+console.log('arr.slice(2,-1):', arr.slice(2, -1)); // returns an array
+console.log('slice:', arr);
+
+// splice 
+// mutates the current array
+console.log('arr.splice(3):', arr.splice(2, 5));
+console.log('splice:', arr);
+
+// reverse
+arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
+console.log('reverse', arr.reverse());
+
+// concat
+// does not mutate the current array
+
+let a = ['a', 'b', 'c'];
+let b = ['d', 'e', 'f'];
+console.log('concat:', a.concat(b));
+
+// join
+console.log('join', a.join('-'));
