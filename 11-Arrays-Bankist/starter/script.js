@@ -157,10 +157,17 @@ console.log(totalUsd);
 const max = movements.reduce((acc, crr) => {
   if (acc > crr) return acc;
   else return crr;
-})
+}, movements[0]);
 
 console.log(max);
 
 const maxVal = movements.reduce((acc, crr) => acc > crr ? acc : crr);
 
 console.log(maxVal);
+
+// 155. The Magic of Chaining Methods
+
+// Total spent in Indian Rupees
+const totalSpent = movements.filter(val => val > 0).map(item => item * 85).reduce((acc, crr) => acc = acc + crr);
+
+console.log(totalSpent);
