@@ -124,3 +124,13 @@ movements.forEach((movement, i, arr) => {
   if (movement > 0) console.log(`Transaction ${i}: You deposited ${movement} from your account!`);
   else console.log(`Transaction ${i}: You withdrew ${Math.abs(movement)} from your account!`);
 });
+
+// 150. The Map Method
+
+const usd = [1, 5, 10, 15, 20, 25, 30];
+
+const rupees = usd.map((dollar, index) => {
+  return dollar * 85;
+})
+
+console.log(rupees);
