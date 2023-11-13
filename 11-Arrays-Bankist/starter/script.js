@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -104,3 +104,23 @@ console.log('concat:', a.concat(b));
 
 // join
 console.log('join', a.join('-'));
+
+// 144. Looping Arrays: forEach
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// forOf loop
+
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) console.log(`Transaction ${i}: You deposited ${movement} from your account!`);
+  else console.log(`Transaction ${i}: You withdrew ${Math.abs(movement)} from your account!`);
+}
+
+console.log(`==================================================================================`);
+
+// forEach loop
+// In forEach loop break or continue won't work
+movements.forEach((movement, i, arr) => {
+  if (movement > 0) console.log(`Transaction ${i}: You deposited ${movement} from your account!`);
+  else console.log(`Transaction ${i}: You withdrew ${Math.abs(movement)} from your account!`);
+});
