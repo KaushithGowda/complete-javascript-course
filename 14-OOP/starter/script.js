@@ -112,7 +112,23 @@ class Account {
     set fullName(name) {
         this._fullName = name;
     }
+
+    // 215. Static methods
+    static hey() {
+        console.log('Hey there!');
+        console.log(this); // this will point to the constructor function. Since, it is the owner of the function which is getting called
+    }
 }
 
 const monica = new Account('Monica');
 console.log({ monica });
+Account.hey(); // This method is not inherited into the instances created using this class
+
+// function way of writing a static method
+Account.hello = function () {
+    console.log(this);
+    console.log('Hello there!');
+}
+Account.hello();
+// monica.hey(); // This is not available in the instance
+// monica.hello(); // This is not available in the instance
