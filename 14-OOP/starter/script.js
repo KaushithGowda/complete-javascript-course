@@ -44,3 +44,21 @@ User.prototype.job = 'Corporate';
 console.log(bob.job); // Corporate
 console.log(bob.hasOwnProperty('name')); // true
 console.log(bob.hasOwnProperty('job')); // false
+
+// 211. Prototypal In-heritance on Built-in Objects
+
+// Object.prototype is top of the prototype chain.
+console.log(bob.__proto__.__proto__); // Object
+console.log(bob.__proto__.__proto__.__proto__); // null Since, Object is the top of the prototype chain
+
+console.log(bob.__proto__.constructor); // User()
+console.log(bob.__proto__.__proto__.constructor); // Object()
+
+// Array is a type of object
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9] // new Array()
+console.log(arr.__proto__); // Array()
+
+const h1 = document.querySelector('h1');
+console.dir(h1); // object
+
+console.dir(x => x + 1); // object
