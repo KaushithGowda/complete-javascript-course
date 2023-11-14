@@ -74,10 +74,21 @@ class Person {
     constructor(name, year) {
         this.year = year;
         this.name = name;
+        this.transactions = [200, 100, 30, 20, 100, 300];
     }
 
     calcAge() {
         console.log('calcAge inside Person class:', 2023 - this.year);
+    }
+
+    // 214. Setters and Getters
+    get lastTransaction() {
+        console.log('getter in the person class:', this.transactions.slice(-1).pop());
+    }
+
+    set lastTransaction(item) {
+        this.transactions.push(item);
+        console.log(james);
     }
 }
 
@@ -89,3 +100,19 @@ console.log(james.__proto__ === Person.prototype);
 // Note 1. Classes are not hoisted(We cannot use it before declaring them)
 // Note 2. Classes are first class citizens(We can return a class from a function, send it as a param to a function)
 // Note 3. Classses are executed in strict mode(Even if we are not using strict mode)
+
+james.lastTransaction;
+james.lastTransaction = 10;
+
+class Account {
+    constructor(fullName) {
+        this.fullName = fullName;
+    }
+
+    set fullName(name) {
+        this._fullName = name;
+    }
+}
+
+const monica = new Account('Monica');
+console.log({ monica });
