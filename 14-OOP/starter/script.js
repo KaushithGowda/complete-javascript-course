@@ -62,3 +62,30 @@ const h1 = document.querySelector('h1');
 console.dir(h1); // object
 
 console.dir(x => x + 1); // object
+
+// 213. ES6 Classes
+
+// class expression
+// const Person = class {
+// }
+
+// class declaration
+class Person {
+    constructor(name, year) {
+        this.year = year;
+        this.name = name;
+    }
+
+    calcAge() {
+        console.log('calcAge inside Person class:', 2023 - this.year);
+    }
+}
+
+const james = new Person('james', 1990);
+james.calcAge();
+console.log(james.__proto__);
+console.log(james.__proto__ === Person.prototype);
+
+// Note 1. Classes are not hoisted(We cannot use it before declaring them)
+// Note 2. Classes are first class citizens(We can return a class from a function, send it as a param to a function)
+// Note 3. Classses are executed in strict mode(Even if we are not using strict mode)
