@@ -151,3 +151,43 @@ virat.calcAge();
 console.log(virat);
 console.log(virat.__proto__);
 console.log(virat.__proto__);
+
+// 218. Inheritance between Classes": Constructor functions
+
+const Human = function (name, year) {
+    this.name = name;
+    this.year = year;
+}
+
+Human.prototype.calcAge = function () {
+    console.log('Age:', 2023 - this.year);
+}
+
+const Student = function (name, year, course) {
+    Human.call(this, name, year);
+    this.course = course;
+}
+
+// Linking prototypes
+// We have to link the prototype before we write methods into Student prototype. Else, object.create will return {} which will overwrite whatever methods are present in Student.prototype.
+Student.prototype = Object.create(Human.prototype);
+// Since, we are setting prototype of student to Human using Object.create . The Constructor of student would be pointing to Human.
+Student.prototype.constructor = Student;
+
+console.log(Student.prototype.constructor);
+
+Student.prototype.greet = function () {
+    console.log('Hey there! mate');
+}
+
+const jack = new Student('jack', 1980, 'CS');
+console.log('Student proto:', jack.__proto__);
+console.log('Human proto:', jack.__proto__.__proto__);
+
+console.log(jack);
+jack.calcAge();
+jack.greet();
+
+console.log(jack instanceof Student);
+console.log(jack instanceof Human);
+console.log(jack instanceof Object);
