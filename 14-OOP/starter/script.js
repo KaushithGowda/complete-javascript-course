@@ -220,3 +220,30 @@ class Son extends Father {
 const son = new Son('Koushik', 1997);
 son.thanks();
 son.responsibility();
+
+// 221. Inheritance Between "Classes": Object.create
+const AllRounder = {
+    calcAge() {
+        console.log(2023 - this.year);
+    },
+    init(name, year) {
+        this.name = name;
+        this.year = year;
+    },
+}
+
+const batter = Object.create(AllRounder);
+batter.init = function (name, year, course) {
+    AllRounder.init.call(this, name, year);
+    this.course = course;
+}
+
+batter.intro = function () {
+    console.log('Hey there! I am', this.name, 'from', this.course);
+}
+
+const kohli = Object.create(batter);
+console.log({ kohli });
+kohli.init('virat', 1992, 'cricket');
+kohli.intro();
+kohli.calcAge();
