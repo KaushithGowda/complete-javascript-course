@@ -132,3 +132,22 @@ Account.hello = function () {
 Account.hello();
 // monica.hey(); // This is not available in the instance
 // monica.hello(); // This is not available in the instance
+
+// 216. Objects.create
+
+const Player = {
+    init(name, year) {
+        this.name = name;
+        this.year = year;
+    },
+    calcAge() {
+        this.birthYear = 2023 - this.year;
+    }
+};
+
+const virat = Object.create(Player);
+virat.init('virat', 1992);
+virat.calcAge();
+console.log(virat);
+console.log(virat.__proto__);
+console.log(virat.__proto__);
