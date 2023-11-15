@@ -191,3 +191,32 @@ jack.greet();
 console.log(jack instanceof Student);
 console.log(jack instanceof Human);
 console.log(jack instanceof Object);
+
+class Father {
+    constructor(name, year) {
+        this.name = name;
+        this.year = year;
+    }
+
+    responsibility() {
+        if ((2023 - this.year) > 25) {
+            console.log('The Responsibility of home is yours son');
+        }
+    }
+}
+
+class Son extends Father {
+    constructor(name, year,) {
+        // It is mandatory to have super method call before accessing this
+        super('name', 1997);
+        console.log(this);
+    }
+
+    thanks() {
+        console.log('Thanks dad! I will take care of the family from here on.');
+    }
+}
+
+const son = new Son('Koushik', 1997);
+son.thanks();
+son.responsibility();
