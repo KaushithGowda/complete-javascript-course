@@ -247,3 +247,29 @@ console.log({ kohli });
 kohli.init('virat', 1992, 'cricket');
 kohli.intro();
 kohli.calcAge();
+
+// 220. Encapsulation: Protected Properties and Methods:
+
+// Encapsulation is needed to the data inside the class from being manipulated by external code and being able to cahnge implentation of the code inside the class.
+
+class Something {
+    cosntructor(p1, p2, p3) {
+        this.p1 = p1;
+
+        // protected property 
+        // This is a dev way to say to other dev that this is encapsulated. So, this property should not be changed from external code.
+        this._arr = [];
+        this._p2 = p2;
+        this.p3 = p3;
+    }
+
+    // public method
+    method1() {
+        // does something
+    }
+
+    // protected method
+    _method1() {
+        // does something
+    }
+}
