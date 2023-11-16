@@ -71,6 +71,7 @@ console.dir(x => x + 1); // object
 
 // class declaration
 class Person {
+    // The constructor method is called by new operator when an instance of the class is created. It is mandatory in the parent class. But can be omitted in the child class when we want same properties and methods as parent class
     constructor(name, year) {
         this.year = year;
         this.name = name;
@@ -209,6 +210,7 @@ class Son extends Father {
     constructor(name, year,) {
         // It is mandatory to have super method call before accessing this
         // We have to do this because firstly the constructor of parent class needs to happen first. So, the properties and methods in that are present in parent class can we stored or executed and on those properties and methods we can add some more properties and methods
+        // Call to parent(super) class(necessary with extend). Needs to happen before accesing this
         super('name', 1997);
         console.log(this);
     }
@@ -261,6 +263,8 @@ class Something {
         // This is a dev way to say to other dev that this is encapsulated. So, this property should not be changed from external code.
         this._arr = [];
         this._p2 = p2;
+        // Instance property avialable on created object
+        // This is just like public field which will be avialable for all the objects. But this value will be different to different objects depending on the parameter which the consrtuctor receives
         this.p3 = p3;
     }
 
@@ -292,6 +296,9 @@ class SomethingElse {
 
     // private fields
     #someField = [];
+
+    // static public field (Only avialable on the class and not on instances)
+    static str = 'static'
 
     constructor(p1, p2, p3) {
         this.p1 = p1;
@@ -351,7 +358,7 @@ class SavingBankAccount {
     }
 
     // static method
-    // static method will be available only on the classes and not on instances
+    // static public method(Only avialable on the class and not on instances)
     static status() {
         console.log('I am static method. Im avail only for classes and not for instances');
     }
