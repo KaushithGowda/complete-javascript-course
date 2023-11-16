@@ -277,7 +277,6 @@ class Something {
 
 // 221. Encapsulation: Private Class Fields and Methods:
 
-
 // 1. private method
 // 2. public method
 // 3. private fields
@@ -331,4 +330,37 @@ se._method1();
 // Using this keyword we can access the private fields
 
 // Property '#method3' is not accessible outside class 'SomethingElse' because it has a private identifier.
-// se.#method3();
+// se.#method3()
+
+// 225. Chaining Methods
+class SavingBankAccount {
+    constructor(name, balence) {
+        this.balence = balence;
+        this.name = name;
+    }
+
+    deposit(val) {
+        this.balence += val;
+        return this;
+    }
+
+    withdraw(val) {
+        if (this.balence > val) this.balence -= val;
+        else console.log(`You are broke!`);
+        return this;
+    }
+
+    // static method
+    // static method will be available only on the classes and not on instances
+    static status() {
+        console.log('I am static method. Im avail only for classes and not for instances');
+    }
+};
+
+const shady = new SavingBankAccount('shady', 50000);
+console.log(shady.balence);
+shady.withdraw(5000);
+console.log(shady.balence);
+shady.deposit(10000);
+console.log(shady.balence);
+SavingBankAccount.status();
