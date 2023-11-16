@@ -208,6 +208,7 @@ class Father {
 class Son extends Father {
     constructor(name, year,) {
         // It is mandatory to have super method call before accessing this
+        // We have to do this because firstly the constructor of parent class needs to happen first. So, the properties and methods in that are present in parent class can we stored or executed and on those properties and methods we can add some more properties and methods
         super('name', 1997);
         console.log(this);
     }
@@ -253,7 +254,7 @@ kohli.calcAge();
 // Encapsulation is needed to the data inside the class from being manipulated by external code and being able to cahnge implentation of the code inside the class.
 
 class Something {
-    cosntructor(p1, p2, p3) {
+    constructor(p1, p2, p3) {
         this.p1 = p1;
 
         // protected property 
@@ -273,3 +274,61 @@ class Something {
         // does something
     }
 }
+
+// 221. Encapsulation: Private Class Fields and Methods:
+
+
+// 1. private method
+// 2. public method
+// 3. private fields
+// 4. public fields
+
+// Field is like a property which will be present on all instances. That's why we call this a public instance field.
+
+class SomethingElse {
+
+    // public fields(These will be present on instances and not on prototypes)
+    str = 'string';
+    _arr = [];
+
+    // private fields
+    #someField = [];
+
+    constructor(p1, p2, p3) {
+        this.p1 = p1;
+
+        this._arr = [];
+        this._p2 = p2;
+        this.p3 = p3;
+        console.log(p1, p2, p3);
+    }
+
+    // public method
+    // The methods will be added to the prototype
+    method1() {
+        // does something
+    }
+
+    // protected method
+    _method1() {
+        // does something
+    }
+
+    // private method
+    #method3() {
+        // does something
+    }
+}
+
+const se = new SomethingElse('1', '2', '3');
+console.log(se);
+se._method1();
+
+// private fields are not accessible outside the class
+// console.log(se.#someField);
+
+// We can write a method to get or set the private field value but that would be a internal modification to the private field
+// Using this keyword we can access the private fields
+
+// Property '#method3' is not accessible outside class 'SomethingElse' because it has a private identifier.
+// se.#method3();
