@@ -97,3 +97,25 @@ const renderCountryFetch = () => {
 };
 
 renderCountryFetch();
+
+// 258. The Event Loop in Practise
+
+// Global context
+console.log('Test start');
+
+// Callbacks queue : Normal async callbacks
+// Callback functions which goes to callbak queue and get executed in the queue of functions
+setTimeout(() => console.log('Timeout Call after 0sec!'), 0);
+
+// Microtasks queue : Promise related callbacks
+// Microtasks queue has priority over Callback queue
+// Callback functions related to promises goes to Microtasks queue and get executed in the queue of functions
+Promise.resolve('Promise 1').then(res => {
+    // The promise callback has to finish for callback queue functions to execute 
+    for (let i = 0; i < 10000000000; i++) { }
+    console.log(res);
+});
+Promise.resolve('Promise 2').then(res => console.log(res));
+
+// Global context
+console.log('Test end');
