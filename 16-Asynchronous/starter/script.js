@@ -163,3 +163,15 @@ wait(2).then(() => {
 // resolve and reject are static methods on Promise constructor. These can be resolve immediately
 Promise.resolve('abc').then(res => console.log(res));
 Promise.reject(new Error('Issue!')).catch(err => console.error(err));
+
+// 262. Consuming Promises from Async/Await
+
+const getCountry = async function () {
+    const responce = await fetch('https://restcountries.com/v3.1/name/usa');
+    const res = await responce.json();
+    console.log(res);
+}
+
+console.log('Before Api call');
+getCountry();
+console.log('After Api call');
