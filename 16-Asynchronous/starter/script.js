@@ -112,10 +112,54 @@ setTimeout(() => console.log('Timeout Call after 0sec!'), 0);
 // Callback functions related to promises goes to Microtasks queue and get executed in the queue of functions
 Promise.resolve('Promise 1').then(res => {
     // The promise callback has to finish for callback queue functions to execute 
-    for (let i = 0; i < 10000000000; i++) { }
+    // for (let i = 0; i < 10000000000; i++) { }
     console.log(res);
 });
 Promise.resolve('Promise 2').then(res => console.log(res));
 
 // Global context
 console.log('Test end');
+
+// 259. Building a Simple Promise
+
+// Promises are special type of objects. The object is created using new keyword and constructor of Promise and it takes in executor function. 
+// As soon as Promise constructor runs. It will execute the executor function.
+// The executor function takes in resolve and reject arguments.
+const lotteryPromise = new Promise(function (resolve, reject) {
+    // This function is responsible for asynchronous behaviour which we are trying to handle.
+    // This function will have the future result value.
+    setTimeout(() => {
+        if (Math.random() > 0.5) resolve(`Bingo 💵`);
+        else reject(new Error(`Ahh now you're broke 💩`));
+    }, 2000);
+})
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.log(err));
+
+// Normally we just consume promises. We built promises only to wrap old callback based functions to promises.
+// Promisifying: This is a process of converting callback asynchronous behaviour to promise based.
+
+// Promisifying Timeout
+const wait = function (secs) {
+    return new Promise(function (resolve) {
+        setTimeout(resolve, secs * 1000);
+    })
+};
+
+wait(2).then(() => {
+    console.log('I waited for 2 secs')
+    return wait(1);
+}).then(() => {
+    console.log('I waited for 3 secs')
+    return wait(1);
+}).then(() => {
+    console.log('I waited for 4 secs')
+    return wait(1);
+}).then(() => {
+    console.log('I waited for 5 secs')
+    return wait(1);
+})
+
+// resolve and reject are static methods on Promise constructor. These can be resolve immediately
+Promise.resolve('abc').then(res => console.log(res));
+Promise.reject(new Error('Issue!')).catch(err => console.error(err));
