@@ -167,11 +167,27 @@ Promise.reject(new Error('Issue!')).catch(err => console.error(err));
 // 262. Consuming Promises from Async/Await
 
 const getCountry = async function () {
-    const responce = await fetch('https://restcountries.com/v3.1/name/usa');
-    const res = await responce.json();
-    console.log(res);
+    try {
+        const responce = await fetch('https://restcountries.com/v3.1/name/usa');
+        const [res] = await responce.json();
+        console.log(res);
+        if (res) throw new Error('SOmething');
+        return `Your data: ${[res]}`
+    } catch (err) {
+        console.log(err);
+    }
 }
 
 console.log('Before Api call');
-getCountry();
+// In the then handler callback, the argument that is passed is the resolved value of promise
+getCountry().then(res => console.log(res));
 console.log('After Api call');
+
+// 263. Error Handling with try and catch
+try {
+    const x = 10;
+    let y = 5;
+    x = 11;
+} catch (error) {
+    console.log(error);
+}
