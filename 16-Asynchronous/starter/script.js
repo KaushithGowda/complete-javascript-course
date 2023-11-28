@@ -191,3 +191,28 @@ try {
 } catch (error) {
     console.log(error);
 }
+
+// 265. Running promises in parallel
+
+const getJson = async (country) => {
+    const res = await fetch(`https://restcountries.com/v3.1/name/${country}`);
+    return await res.json();
+}
+
+const parallel = async function () {
+    try {
+        // const res1 = await fetch('https://restcountries.com/v3.1/name/usa');
+        // const [data1] = await res1.json();
+        // const res2 = await fetch('https://restcountries.com/v3.1/name/uk');
+        // const [data2] = await res2.json();
+        // const res3 = await fetch('https://restcountries.com/v3.1/name/spain');
+        // const [data3] = await res3.json();
+        // console.log(data1, data2, data3);
+        const [res] = await Promise.all([getJson('uk'), getJson('usa'), getJson('spain')]);
+        console.log(res);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+parallel();
